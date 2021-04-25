@@ -31,7 +31,7 @@ class HairClassifier(object):
 
     def crop_face(self, img_path):
         img = dlib.load_rgb_image(img_path)
-        faces = self.face_detector(img, 2)
+        faces = self.face_detector(img, 1)
         landmark_tuple = []
         if len(faces) == 0:
             return -1
@@ -145,8 +145,9 @@ if __name__ == '__main__':
             # in output reversed classes
             if pred_class != -1:
                 pred_class = 1 - pred_class
+            # 1 - longhair, 0 - shorthair
 
             # log str
-            # print(f'Step {i + 1}/{len(imgs_list)}', img_name, pred_class)
+            print(f'Step {i + 1}/{len(imgs_list)}', img_name, pred_class)
 
             writer.writerow([str(img_path), pred_class])
