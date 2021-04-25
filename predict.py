@@ -20,6 +20,7 @@ class HairClassifier(object):
         self.model.load_state_dict(checkpoint['model_state_dict'])
         print('Model loaded successfully')
         self.model.to(self.device)
+        self.model.eval()
         # crop params
         self.crop_size = 256
         self.face_size = 156 # mean face size in dataset
