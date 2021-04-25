@@ -11,7 +11,7 @@ To use it is necessary download a trained facial shape predictor from dlib libra
 
 __Command to generate results file__ *(Python usage)*
 ```bash
-python predict.py --imgs_dir path/to/dir/with/images --shape_predictor shape_predictor_68_face_landmarks.dat --cls_model model_30.pt --result_file 
+python predict.py --imgs_dir path/to/dir/with/images --shape_predictor shape_predictor_68_face_landmarks.dat --cls_model model_30.pt --result_file result.csv
 ```
 __Bash script usage__  *(with shape predictor downloading)*
 ```bash
